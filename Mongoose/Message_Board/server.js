@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
     arr = Post.find({})
         .exec(function (err, posts) {
             res.render('index', { arr: posts })
-            console.log(arr )
+            console.log(arr)
         })
 })
 
@@ -53,13 +53,11 @@ app.post("/add", (req, res) => {
 app.post('/add_comment/:id', (req, res) => {
     Comment.create(req.body, function (err, data) {
         if (err) {
-            // handle the error from creating a blog
             console.log("Error")
         }
         else {
             Post.findOneAndUpdate({ _id: req.params.id }, { $push: { comments: data } }, function (err, data) {
                 if (err) {
-                    // handle the error from trying to update the user
                     console.log("Error")
                     res.redirect('/');
                 }
