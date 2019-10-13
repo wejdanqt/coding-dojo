@@ -79,7 +79,7 @@ app.post('/mongooses/:id', (req, res) => {
 //...........................................
 app.post('/mongooses/destroy/:id', (req, res) => {
     Animal.remove({ _id: req.params.id  })
-        .then(deletedAnimal => {
+        .then(deleted => {
         })
         .catch(err => res.json(err));
         res.redirect('/');

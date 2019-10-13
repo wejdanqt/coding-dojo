@@ -1,0 +1,36 @@
+<html>
+
+<body>
+    <h1>The Coding Dojo Board</h1>
+    <hr>
+    <form action="add" method="POST">
+        <h5>Name:</h5>
+        <input type="text" name="name">
+        <h5>Message:</h5>
+        <textarea cols="50" rows="6" style="resize: none;" name="content"></textarea> <br><br>
+        <input type="submit" name="submit">
+    </form>
+    <hr>
+    <!-- Seconde Form for each Post and it's comment -->
+    <% for (var i in arr) { %>
+   
+        <h2>Name: <%= arr[i].name %></h2>
+        <h2>Message: <%= arr[i].content %></h2>
+    
+        <%for(var j in arr[i].comments){%>
+        <h5 style="margin-left:110px;">Name: <%= arr[i].comments[j].name%></h5>
+        <h5 style="margin-left:110px;">Comment: <%= arr[i].comments[j].content%></h5>
+        <br>
+        <%}%>
+        <form action="/add_comment/<%=arr[i]._id%>" method="POST">
+        <h5>Name:</h5>
+        <input type="text" name="name">
+        <h5>Message:</h5>
+        <textarea cols="50" rows="6" style="resize: none;" name="content"></textarea> <br><br>
+        <input type="submit" name="submit">
+    </form>
+    <hr>
+    <% } %>
+</body>
+
+</html>
