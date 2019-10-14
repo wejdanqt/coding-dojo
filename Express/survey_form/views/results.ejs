@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Survey</title>
+    </head>
+    <body>
+        <h2>Here are the survey information:</h2>
+         <% for (var info of information) { %>
+            <h3>Name: <%= info.name %></h3>
+            <h3>Dojo Location: <%= info.city %></h3>
+            <h3>Favorite Language: <%= info.lang %></h3>
+            <h3>Comment: <%= info.comment %></h3>
+           
+            <hr>
+        <% } %>
+    </body>
+</html>

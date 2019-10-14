@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>The great button game</title>
+        <style>
+            body{
+                text-align: center;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document).ready(function (){
+            var socket = io(); 
+            
+            socket.on('updated_counter' , function(counter){
+            document.getElementById("count").innerHTML = counter
+         });
+                $('#form').submit(function(e) {
+                    e.preventDefault();
+                    socket.emit('button')
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <form action="" id="form">
+            <h1>The button has been pushed <span id="count"></span> times</h1> 
+            <h4>Push the button to update the count!</h4>
+            <input  style="background-color: darkblue; color:white;" type="submit"  value ="Push the epic button">
+        </form>
+        <a href='/reset'><button style="background-color: darkred; color:white;">Reset Count</button></a>
+
+
+        
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Real Time Color</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var socket = io();
+            socket.on('update_color' , function(color){
+            document.getElementById("body_color").style.backgroundColor = color
+         });
+
+            $("#green").click(function () {
+                socket.emit('green');
+            });
+            $("#blue").click(function () {
+                socket.emit('blue');
+            });
+            $("#pink").click(function () {
+                socket.emit('pink');
+            });
+        });
+    </script>
+
+
+</head>
+
+<body id="body_color" style="text-align: center;">
+    <button id="green" name="green">Green</button>
+    <button id="blue">Blue</button>
+    <button id="pink">Pink</button>
+
+</html>

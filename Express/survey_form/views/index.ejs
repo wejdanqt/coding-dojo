@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Survey</title>
+    </head>
+    <body>
+        <form action="/result" method="POST">
+            <label>Your Name:</label><input type="text" name="name"><br><br>
+            <label>Dojo Location:</label>
+            <select name="city">
+                    <option value="Riyadh">Riyadh</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="Jeddah">Jeddah</option>
+            </select><br><br>
+            <label>Favorite Language:</label>
+            <select name="lang">
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="PHP">PHP</option>
+            </select><br><br>
+            <label>Comment(Optional):</label><br>
+            <textarea cols="60" rows="10" name="comment"></textarea><br><br>
+
+            <input type="submit" name="submit">
+
+        </form>
+    </body>
+</html>
