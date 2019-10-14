@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <form action="/mongooses/<%=arr._id%>" method="post">
+        <table>
+            <tr>
+                <td>Name:</td>
+
+                <td><input type="text" name="name" value=" <%= arr.name %> "></td>
+            </tr>
+            <br>
+            <tr>
+                <td>Favorite color:</td>
+                <td><input type="text" name="food" value="<%=arr.favorite_food%>"></td>
+            </tr>
+            <br>
+        </table>
+        <input type="submit" value="Edit">
+    </form>
+    <form action="/mongooses/destroy/<%=arr._id%>" method="post">
+        <input type="submit" value="Delete">
+    </form>    
+
+</html>

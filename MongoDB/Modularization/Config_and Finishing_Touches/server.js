@@ -19,7 +19,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/name_of_your_DB', {useNewUrlParser: true});
 
 
-require('./server/models/user.js');
+require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);
    
 
