@@ -1,0 +1,55 @@
+<html>
+
+<body>
+    <% if(errors){ %>
+    <div style=" color: darkred;" >
+        <%= errors %>
+    </div>
+    <% } %>
+    <form action="reg" method="POST">
+        <table>
+            <h1>Welcome</h1>
+            <h3>Register</h3>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="first_name"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="last_name"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" name="password"></td>
+            </tr>
+            <tr>
+                <td>Birthday:</td>
+                <td><input type="date" name="bday"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" name="register" value="Register">
+    </form>
+    <hr>
+    <form action="login" method="POST">
+        <table>
+            <h3>Login</h3>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" name="password"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" name="login" value="Login">
+    </form>
+</body>
+
+</html>
