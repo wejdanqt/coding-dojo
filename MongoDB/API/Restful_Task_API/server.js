@@ -1,15 +1,16 @@
 const express = require("express");
-var parser = require('body-parser');
+var bodyParser = require('body-parser');
 const app = express();
 
-app.use(parser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/restful_task', {useNewUrlParser: true});
 
 
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);
