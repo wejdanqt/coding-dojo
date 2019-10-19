@@ -1,9 +1,9 @@
 const express = require("express");
-var parser = require('body-parser');
+var bodyParser = require('body-parser');
 const app = express();
 
-app.use(parser.urlencoded({ extended: false }))
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 const mongoose = require('mongoose');
 
 app.use(express.static( __dirname + '/public/dist/public' ));
