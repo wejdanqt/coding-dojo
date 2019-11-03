@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+
+  table {
+      border-collapse: collapse;
+     }
+        table , tr , td{
+            border: 1px solid black;
+        }
+
+        #td1{
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+
+        }
+        #td2{
+            background-color: black;
+            width: 100px;
+            height: 100px;
+        }
+      
