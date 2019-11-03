@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>All the tasks:</h1>
+  <button (click)="onShowAllButtonClick()">Get All Tasks</button>
+  <ul>
+    <p *ngIf="clicked"></p>
+      <li *ngFor="let task of tasks">
+        <div>{{ task.title }}</div> <button (click)="onShowButtonClick($})">Show</button>
+      </li>
+  </ul>
+
+
+
+
+</body>
+
+</html>
